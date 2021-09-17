@@ -1,0 +1,40 @@
+.fut-weather-column{
+    /* background: linear-gradient(4deg, rgba(9,9,121,1) 0%, rgba(0,0,0,1) 35%); */
+    /* color: white; */
+    /* background-color: rgb(247 249 255); */
+    background: linear-gradient(0deg, rgba(222,230,255,1) 0%, rgba(247,249,255,1) 35%);
+    padding: 20px;
+    border-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.fut-weather{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.min-max-temp{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.fut-pointer{
+    /* background: black!important; */
+    border-bottom: 2px solid #205eff;
+}
+.fut-pointer::after {
+    content: ' ';
+    height: 0;
+    width: 0;
+    bottom:-30px;
+    left: 45%;
+    position: absolute;
+    border: 10px solid transparent;
+    border-top-color: #205eff;
+}

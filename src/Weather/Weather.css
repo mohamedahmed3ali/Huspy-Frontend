@@ -1,0 +1,117 @@
+.weather-wrapper{
+    width: 100%;
+    background-image: url('https://weather.files.bbci.co.uk/weather-web-lambda-forecast-renderer/272/img/G5/@1x-G5_sunny-intervals-day.jpg');
+    background-repeat: no-repeat;
+}
+.weather-wrapper-night{
+    width: 100%;
+    background-image: url('https://weather.files.bbci.co.uk/weather-web-lambda-forecast-renderer/272/img/G5/@1x-G5_clear-sky-night.jpg');
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.weather-card{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 20px 10%;
+    z-index: 100;
+    background-color: #fff;
+    border-radius: 15px 15px 0 0;
+    /* border-top: solid 3px black;rgb(247 249 255) */
+    border-top: solid 2px #dee6ff;
+    border-left: solid 2px #dee6ff;
+    border-right: solid 2px #dee6ff;
+    padding: 30px;
+    color: black;
+}
+
+.header-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 10%;
+    margin-top: 80px;
+}
+
+.city-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.city{
+    font-size: 35px;
+}
+.country{
+    font-size: 20px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+.time{
+    font-size: 20px;
+    padding-right: 20px;
+}
+.weather{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    font-size: 30px;
+    border-right: 1px solid black;
+    padding-right: 15px;
+}
+.weather-icon{
+    height: 80px;
+}
+.weather-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+.weather-column{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.weather-condition{
+    font-size: 16px;
+    padding-left: 15px;
+}
+.more-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10%;
+}
+.more-info>div{
+    margin-bottom: 10px;
+}
+.more-info>div>p{
+    display: inline-block;
+    padding-right: 6px;
+    font-weight: 500;
+}
+
+.fut-weather-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.day-details-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    overflow-y: auto;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
