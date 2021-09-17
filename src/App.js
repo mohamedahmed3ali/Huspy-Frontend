@@ -34,7 +34,7 @@ function App() {
       SearchTime: getTime(getNowDateString()),
       IsDay: weather.current.is_day
     }
-    const api_url = 'http://localhost:8000/addSearchHistory/';
+    const api_url = 'https://huspy-backend.herokuapp.com/addSearchHistory/';
     
     const requestOptions = {
     method: 'POST',
@@ -48,7 +48,7 @@ function App() {
   }
 
   const fetchSearchHistory = async () => {
-    const api_url = 'http://localhost:8000/getSearchHistory/'
+    const api_url = 'https://huspy-backend.herokuapp.com/getSearchHistory/'
     const response = await fetch(api_url);
     const data = await response.json();
     console.log("data",data);
