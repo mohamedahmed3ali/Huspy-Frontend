@@ -1,0 +1,21 @@
+.hour-card{
+    border-left: 2px solid rgba(222,230,255,1);
+    padding: 10px;
+}
+.hour-card:first-of-type{
+    border-left: none;
+}
+.hour{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.hour-icon-temp{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+.hour-temp{
+    margin-top: -5px;
+}
