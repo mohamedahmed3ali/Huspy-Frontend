@@ -7,6 +7,7 @@
     user-select: none;
     cursor: pointer;
     text-align: center;
+    margin: 15px;
 }
 
 .history-card{
@@ -18,6 +19,7 @@
     user-select: none;
     cursor: pointer;
     text-align: center;
+    margin: 15px;
 }
 
 .history-city{

@@ -1,13 +1,11 @@
 .fut-weather-column{
-    /* background: linear-gradient(4deg, rgba(9,9,121,1) 0%, rgba(0,0,0,1) 35%); */
-    /* color: white; */
-    /* background-color: rgb(247 249 255); */
     background: linear-gradient(0deg, rgba(222,230,255,1) 0%, rgba(247,249,255,1) 35%);
     padding: 20px;
     border-radius: 10px;
     user-select: none;
     cursor: pointer;
     position: relative;
+    margin: 15px;
 }
 
 .fut-weather{
@@ -25,7 +23,6 @@
     margin-left: 30px;
 }
 .fut-pointer{
-    /* background: black!important; */
     border-bottom: 2px solid #205eff;
 }
 .fut-pointer::after {
