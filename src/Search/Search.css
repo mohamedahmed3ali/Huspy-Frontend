@@ -57,3 +57,9 @@ input[type=submit] {
 .autocomplete-active {
   background-color: #d2deff !important;
 }
+
+@media (max-width: 750px) {
+  .search-input{
+      font-size: 10px;
+  }
+}

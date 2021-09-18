@@ -35,3 +35,18 @@
     border: 10px solid transparent;
     border-top-color: #205eff;
 }
+@media (max-width: 750px) {
+    .fut-weather-column{
+        padding: 15px;
+        margin: 10px;
+        font-size: 15px;
+    }
+    .min-max-temp{
+        font-size: 15px;
+        margin-left: 25px;
+    }
+
+    .fut-weather{
+        margin: 5px 0;
+    }
+}

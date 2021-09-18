@@ -31,6 +31,7 @@
   text-align: left;
   padding: 0 10%;
 }
+
 .search-history>h1{
   font-weight: 400;
   margin-top: 40px;
@@ -41,4 +42,24 @@
   justify-content: space-around;
   margin: 70px 0;
   flex-wrap: wrap;
+}
+
+@media (max-width: 750px) {
+  .logo{
+    height: 80px;
+  }
+  .icon{
+    height: 35px;
+    margin-top: -5px;
+    margin-left: -10px;
+  }
+  .header{
+    padding: 0 5%;
+  }
+  .search-history{
+    padding: 0 5%;
+  }
+  .search-history>h1{
+    font-size: 25px;
+  }
 }

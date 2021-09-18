@@ -116,3 +116,32 @@
     margin-top: 100px;
     padding-bottom: 20px;
 }
+
+@media (max-width: 750px) {
+    .weather-icon{
+        height: 50px;
+    }
+    .weather-card{
+        margin: 20px 5%;
+        padding: 10px;
+    }
+    .weather{
+        font-size: 20px;
+    }
+    .city{
+        font-size: 20px;
+    }
+    .country{
+        font-size: 15px;
+    }
+    .time{
+        font-size: 15px;
+        padding-right: 10px;
+    }
+    .weather-condition{
+        font-size: 14px;
+    }
+    .more-info{
+        font-size: 14px;
+    }
+}
