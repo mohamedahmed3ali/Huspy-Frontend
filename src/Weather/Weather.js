@@ -6,15 +6,18 @@ import FutureWeather from "./FutureWeather/FutureWeather";
 import HourDetails from "./HourDetails/HourDetails";
 
 function Weather({ weather }) {
+
     var wrapperClass = 'weather-wrapper';
     const [dayComponents, setDayComponents] = useState([]);
     const iconUrl = weather.current.condition.icon;
 
+    //Changes the background depending on whether it is a day or night
     if (weather.current.is_day === 1)
         wrapperClass = 'weather-wrapper';
     else
         wrapperClass = 'weather-wrapper-night';
 
+    //Adds the hours components based on the selected day
     const changeDayDetails = day => {
         const dayDetails = weather.forecast.forecastday.filter(item => formatDate(item.date) === day)[0];
         setDayComponents(
@@ -24,10 +27,12 @@ function Weather({ weather }) {
         );
     }
 
+    //Iterate the forecast and add day components 
     const futureWeatherList = weather.forecast.forecastday.map(
         item => <FutureWeather weather={item} onDayClick={changeDayDetails} localDate={formatDate(weather.location.localtime)}></FutureWeather>
     );
 
+    //On weather change, Change the day and hours details
     useEffect(() => {
         changeDayDetails(formatDate(weather.location.localtime));
     }, [weather]);

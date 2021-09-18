@@ -1,3 +1,4 @@
+// Format date from YYYY-MM-DD HH:mm to DD/MM
 export function formatDate(date){
     const temp = date.split(' ')[0];
     const day = temp.split('-')[2];
@@ -5,6 +6,7 @@ export function formatDate(date){
     return day + '/' + month;
 }
 
+//returns true if the date is today and false otherwise
 export function isToday(date,isFormatted = false){
     const now = new Date();
     var formattedDate;
@@ -17,10 +19,13 @@ export function isToday(date,isFormatted = false){
 
     return true;
 }
+
+// Retrieves the time from the dateTime input
 export function getTime(date){
     return date.split(' ')[1];
 }
 
+//Returns the string representation to now
 export function getNowDateString(){
     const now = new Date();
     return now.getFullYear() + '-' +

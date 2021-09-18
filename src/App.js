@@ -11,23 +11,24 @@ function App() {
   const [weather, setWeather] = useState();
   const [searchHistory, setSearchHistory] = useState();
 
+  //Retrieves weather depending on the selected city
   const fetchWeather = async (name) => {
-    if(!name)return;
-    console.log("name",name);
+    if (!name) return;
+    console.log("name", name);
     // const api_url = 'https://api.openweathermap.org/data/2.5/weather?id='+id+'&appid=' + api_id + '&units=metric';
-    const api_url = 'https://api.weatherapi.com/v1/forecast.json?key='+api_id+'&q='+name+'&days=10&aqi=no&alerts=no'
+    const api_url = 'https://api.weatherapi.com/v1/forecast.json?key=' + api_id + '&q=' + name + '&days=10&aqi=no&alerts=no'
     const response = await fetch(api_url);
     const data = await response.json();
-    console.log("data",data);
-    setWeather(<Weather weather = {data} />);
+    setWeather(<Weather weather={data} />);
     //Add Search History
-    addSearchHistory(data);  
+    addSearchHistory(data);
   };
 
-  const addSearchHistory = async(weather) => {
+  //Adds a new search history record with every search 
+  const addSearchHistory = async (weather) => {
     const history = {
       CityName: weather.location.name,
-      Temperature: Math.trunc(weather.current.temp_c) + '°C' ,
+      Temperature: Math.trunc(weather.current.temp_c) + '°C',
       Icon: weather.current.condition.icon,
       TempCondition: weather.current.condition.text,
       SearchDate: formatDate(getNowDateString()),
@@ -35,58 +36,57 @@ function App() {
       IsDay: weather.current.is_day
     }
     const api_url = 'https://huspy-backend.herokuapp.com/addSearchHistory/';
-    
+
     const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(history)
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(history)
     };
     const response = await fetch(api_url, requestOptions);
     const data = await response.json();
-    console.log("Search History Response:", data);
     fetchSearchHistory();
   }
 
+  //Fetches last five records of the Search history
   const fetchSearchHistory = async () => {
     const api_url = 'https://huspy-backend.herokuapp.com/getSearchHistory/'
     const response = await fetch(api_url);
     const data = await response.json();
-    console.log("data",data);
-    const dataToUI = data.map(item => <SearchHistory history = {item} onHistoryClick={fetchWeather}/>);
+    console.log("data", data);
+    const dataToUI = data.map(item => <SearchHistory history={item} onHistoryClick={fetchWeather} />);
     setSearchHistory(dataToUI);
   };
 
+  //Fetch search history on load
   useEffect(() => {
-    // fetchWeather();
     fetchSearchHistory();
-    console.log()
   }, []);
 
+  //closes the suggestion div
   const closeAll = e => {
     document.getElementsByClassName('search-wrapper')[0].click();
   }
 
   return (
-    <div onClick = {closeAll}>
-      <div className = "header">
-        <img className = "logo" src='/huspy-logo.png' alt="Logo" />
-        <img className = "icon" src='/weather-icon.png' alt="Logo" />
-        <Search onCitySelect = {fetchWeather}/>
+    <div onClick={closeAll}>
+      <div className="header">
+        <img className="logo" src='/huspy-logo.png' alt="Logo" />
+        <img className="icon" src='/weather-icon.png' alt="Logo" />
+        <Search onCitySelect={fetchWeather} />
       </div>
       <div className="App">
         {weather}
-        <div className = 'search-history'>
+        <div className='search-history'>
           <h1>
             Search History
           </h1>
-          <div className = 'search-history-list'>
+          <div className='search-history-list'>
             {searchHistory}
           </div>
-          
         </div>
       </div>
     </div>
-    
+
   );
 }
 

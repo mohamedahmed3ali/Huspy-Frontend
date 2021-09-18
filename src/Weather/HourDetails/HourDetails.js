@@ -3,9 +3,13 @@ import './HourDetails.css';
 import { getTime } from "../../Utils/Utils";
 
 function HourDetails({hour, mintemp, maxtemp}){
+
     const iconUrl = hour.condition.icon;
+    
+    //Calculates the padding-bottom depending on the position of current temp in respective to other temps
     const paddingBottomVal = ((hour.temp_c - mintemp)/(maxtemp - mintemp)) * 180;
     const paddingBottomString = {'padding-bottom':paddingBottomVal+'px'};
+    
     return(
         <div className='hour-card'>
             <div className='hour'>{getTime(hour.time)}</div>
