@@ -25,7 +25,7 @@ function Weather({ weather }) {
     }
 
     const futureWeatherList = weather.forecast.forecastday.map(
-        item => <FutureWeather weather={item} onDayClick={changeDayDetails}></FutureWeather>
+        item => <FutureWeather weather={item} onDayClick={changeDayDetails} localDate={formatDate(weather.location.localtime)}></FutureWeather>
     );
 
     useEffect(() => {

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import './FutureWeather.css';
-import { formatDate, isToday } from "../../Utils/Utils";
+import { formatDate } from "../../Utils/Utils";
 
-function FutureWeather({weather, onDayClick}){
+function FutureWeather({weather, onDayClick, localDate}){
     const [futCardClass, setFutCardClass] = useState('fut-weather-column');
     const iconUrl = weather.day.condition.icon;
     var weatherDate;
-    if(isToday(weather.date))
+    if(formatDate(weather.date) === localDate)
         weatherDate= "Today";
     else    
         weatherDate = formatDate(weather.date);
@@ -23,7 +23,7 @@ function FutureWeather({weather, onDayClick}){
             elements[i].classList.remove('fut-pointer');
     }
     useEffect(() => {
-        if(isToday(weather.date))
+        if(formatDate(weather.date) === localDate)
             onDayClicked();
     }, [weather]);
     return(
