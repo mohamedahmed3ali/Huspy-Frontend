@@ -104,6 +104,7 @@
     align-items: center;
     width: 100%;
     margin-top: 50px;
+    flex-wrap: wrap;
 }
 
 .day-details-wrapper{
