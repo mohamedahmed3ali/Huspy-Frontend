@@ -49,4 +49,7 @@
     .fut-weather{
         margin: 5px 0;
     }
+    .fut-weather-icon{
+        height: 50px;
+    }
 }
